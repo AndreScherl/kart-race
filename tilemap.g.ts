@@ -1,4 +1,4 @@
-// Auto-generated code. Do not edit.
+// Automatisch generierter Code. Nicht bearbeiten.
 namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const transparency16 = image.ofBuffer(hex``);
@@ -52,21 +52,21 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, [myTiles.transparency16], TileScale.Sixteen);
-            case "level":
+            case "level1":
             case "level1":return tiles.createTilemap(hex`100010000a0a0c0a0c0b0b0c0b0a0a0a0c0c0c0a0a0a0a0a0f131313131313131313100a0a0c0c0a0d1514141414141414160e0a0a0b0b0a0d0e020203020101020d0e0a0a0b0c0a0d0e030f1313131313170e0c0a0c0c0a1c1d030d151414141414110c0a0c0a0a0d0e020d0e0b0b0b0a0c0c0a0c0f1313170e020d1813131313100c0a0c0d15141411021214141414160e0c0a0a0d0e0301030506060606070d0e0a0a0b0d0e0506060404040404080d0e0b0a0b0d0e0904040404040404080d0e0b0a0b0d0e1b191919191919191a0d0e0b0a0a0d18131313131313131313170e0c0a0c121414141414141414141414110c0a0c0c0a0b0b0c0b0b0a0c0c0c0a0a0a0a`, img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . 2 2 2 2 2 2 2 . . . 
+. . . . . . 2 . . . . . . . . . 
+. . . . . . 2 . . . . . . . . . 
+. . . . . . 2 . . 2 2 2 2 2 2 2 
+. . . . . . 2 . . . . . . . . . 
+. . . . . . 2 . . . . . . . . . 
+. . . 2 2 2 2 2 2 2 2 2 . . . . 
+. . . 2 . . . . . . . 2 . . . . 
+. . . 2 . . . . . . . 2 . . . . 
+. . . 2 2 2 2 2 2 2 2 2 . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -111,4 +111,4 @@ namespace myTiles {
     })
 
 }
-// Auto-generated code. Do not edit.
+// Automatisch generierter Code. Nicht bearbeiten.
