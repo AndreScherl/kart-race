@@ -1,11 +1,15 @@
 tiles.setCurrentTilemap(tilemap`level1`)
-let car1 = sprites.create(assets.image`car1 back`, SpriteKind.Player)
-car1.setPosition(80, 100)
-controller.moveSprite(car1)
-scene.cameraFollowSprite(car1)
+let auto1 = sprites.create(assets.image`car1 back`, SpriteKind.Player)
+auto1.setPosition(80, 105)
+controller.moveSprite(auto1)
+scene.cameraFollowSprite(auto1)
+info.setScore(0)
+let minimale_rundenzeit = 10
+let rundenzeit = 21
+let ziellinie_überfahren = 1
 forever(function () {
-    if (car1.vx > 0) {
-        car1.setImage(img`
+    if (auto1.vx > 0) {
+        auto1.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . 2 2 2 2 2 2 2 2 . . . . 
             . . . 2 4 2 2 2 2 2 2 c 2 . . . 
@@ -23,8 +27,8 @@ forever(function () {
             . . . f f f . . . . f f f f . . 
             . . . . . . . . . . . . . . . . 
             `)
-    } else if (car1.vx < 0) {
-        car1.setImage(img`
+    } else if (auto1.vx < 0) {
+        auto1.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . 2 2 2 2 2 2 2 2 . . 
             . . . . . 2 c 2 2 2 2 2 2 4 2 . 
@@ -42,8 +46,8 @@ forever(function () {
             . . . . f f f f . . . . f f f . 
             . . . . . . . . . . . . . . . . 
             `)
-    } else if (car1.vy > 0) {
-        car1.setImage(img`
+    } else if (auto1.vy > 0) {
+        auto1.setImage(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . 2 2 2 2 2 2 . . . . 
             . . . . . 2 2 4 4 2 2 2 2 . . . 
@@ -61,8 +65,8 @@ forever(function () {
             . . . . f 2 d 2 2 2 2 d 2 f . . 
             . . . . . e 2 2 2 2 2 2 e . . . 
             `)
-    } else if (car1.vy < 0) {
-        car1.setImage(img`
+    } else if (auto1.vy < 0) {
+        auto1.setImage(img`
             . . . . . . e e c c e e . . . . 
             . . . . . e 2 2 2 2 2 2 e . . . 
             . . . . 2 c 2 2 2 2 2 2 c 2 . . 
@@ -80,5 +84,18 @@ forever(function () {
             . . . f f e e e e e e e e f f . 
             . . . . f f . . . . . . f f . . 
             `)
+    }
+    if (auto1.tileKindAt(TileDirection.Center, assets.tile`RaceTrackVerticalLeftStart`) || auto1.tileKindAt(TileDirection.Center, assets.tile`RaceTrackVerticalRightStart`)) {
+        if (auto1.vy <= 0 && ziellinie_überfahren == 0) {
+            info.changeScoreBy(1)
+            if (rundenzeit > minimale_rundenzeit) {
+                rundenzeit += -1
+            }
+        }
+        ziellinie_überfahren = 1
+        info.startCountdown(rundenzeit)
+    }
+    if (auto1.tileKindAt(TileDirection.Top, assets.tile`RaceTrackVerticalLeftStart`) || auto1.tileKindAt(TileDirection.Top, assets.tile`RaceTrackVerticalRightStart`)) {
+        ziellinie_überfahren = 0
     }
 })
